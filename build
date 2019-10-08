@@ -1,0 +1,6 @@
+#!/usr/bin/env Rscript
+stopifnot(file.exists("build"))
+drop <- setdiff(dir("."), "build")
+unlink(drop, recursive = TRUE)
+path <- orderly:::create_orderly_demo()
+file.copy(dir(path, full.names = TRUE), ".", recursive = TRUE)
